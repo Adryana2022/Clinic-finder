@@ -1,0 +1,73 @@
+/* Estilo para o cabeçalho */
+h1 {
+	font-size: 36px;
+	color: #8d0303;
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+/* Estilo para o formulário */
+form {
+	max-width: 500px;
+	margin: 0 auto;
+	padding: 20px;
+	background-color: #f9f9f9;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	border-radius: 5px;
+}
+
+/* Estilo para os rótulos dos campos */
+label {
+	display: block;
+	font-size: 18px;
+	color: #4b0707;
+	margin-bottom: 10px;
+}
+
+/* Estilo para os campos de entrada de texto */
+input[type="text"], input[type="email"], input[type="tel"], textarea, select {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	color: #333;
+	border: none;
+	border-bottom: 2px solid #ddd;
+	background-color: #f9f9f9;
+	transition: border-color 0.3s ease;
+	margin-bottom: 20px;
+}
+
+/* Estilo para os campos de entrada obrigatórios */
+input:required {
+	border-color: red;
+}
+
+/* Estilo para o botão de enviar */
+input[type="submit"], input[type="reset"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 18px;
+	color: #fff;
+	background-color: #0c0a43;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease;
+}
+
+/* Estilo para o botão de enviar quando o mouse está em cima */
+input[type="submit"]:hover, input[type="reset"]:hover {
+	background-color: #555;
+}
+
+/* Estilo para as mensagens de erro */
+#error {
+	display: block;
+	color: red;
+	font-size: 14px;
+	margin-top: 5px;
+	margin-bottom: 20px;
+}

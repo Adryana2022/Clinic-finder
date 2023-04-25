@@ -1,0 +1,46 @@
+.titulo-pagina{
+padding: 20px;
+border-style:groove;
+border-color: rgb(0,153, 255);
+border-width: 2px;
+}
+
+p{
+padding: 20px;
+}
+
+h5{
+border-style: ridge;
+
+}
+.logo{
+    width: 190px;
+    padding: 20px;
+}
+
+a{
+color: brown;
+
+}
+
+.lnr-eye {
+    position:relative;
+    cursor: pointer;
+}
+input {
+    
+box-sizing: border-box;
+}
+
+
+
+
+.btn-buscar{
+border-color: rgb(0, 153, 255);
+right: 900px;
+position: relative;
+}
+.btn-voltar{
+    border-color: rgb(0, 153, 255);
+    left: 50px;
+}

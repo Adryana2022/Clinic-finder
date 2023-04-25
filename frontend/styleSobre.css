@@ -1,0 +1,55 @@
+
+
+
+  
+  /* Estilo para a imagem e texto da página de Sobre */
+  
+  .container-sobre {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+  
+  .imagem-sobre {
+    flex-basis: 40%;
+    margin-right: 50px;
+  }
+  
+  .imagem-sobre img {
+    width: 100%;
+  }
+  
+  .texto-sobre {
+    flex-basis: 50%;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  
+  .texto-sobre h1 {
+    font-size: 37px;
+    color: #007BFF;
+    margin-bottom: 30px;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .container-sobre {
+      flex-direction: column;
+    }
+  
+    .imagem-sobre {
+     
+        width: auto;
+    }   
+  
+    .texto-sobre {
+      flex-basis: 80%;
+    }
+  
+    .texto-sobre h1 {
+      font-size: 36px;
+    }
+  }
+  
