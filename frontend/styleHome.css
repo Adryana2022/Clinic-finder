@@ -1,0 +1,78 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: rgb(215, 239, 239);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: radial-gradient(circle at 112.99% 20.63%, #6cb9a8 0, #66b9ae 5.56%, #62b9b5 11.11%, #5eb9bb 16.67%, #5cb9c1 22.22%, #5cb8c7 27.78%, #5db8cc 33.33%, #61b7d1 38.89%, #66b5d5 44.44%, #6cb4d8 50%, #73b2db 55.56%, #7cb1dd 61.11%, #84afde 66.67%, #8dadde 72.22%, #97abdd 77.78%, #a0a9dc 83.33%, #a8a6da 88.89%, #b1a4d7 94.44%, #b9a2d3 100%);
+}
+
+.content-container {
+    flex: 1;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+}
+.logo{
+    width: 180px;
+    padding: 30px;
+}
+
+h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    color: rgb(18, 1, 58);
+}
+
+p {
+    font-size: 15px;
+    line-height: 1.5;
+    text-align: center;
+    margin-bottom: 30px;
+    color: rgb(18, 1, 58);
+}
+
+button {
+    background-color: #0d0134; /* cor de fundo */
+    color: white; /* cor do texto */
+    padding: 12px 24px; /* tamanho do botão */
+    border: none; /* remove a borda */
+    border-radius: 5px; /* arredonda as bordas */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* sombra */
+    transition: all 0.3s ease; /* animação de transição */
+  }
+  
+  button:hover {
+    background-color: #f3f4f3; /* cor de fundo quando o mouse estiver em cima */
+    color: #020642; /* cor do texto quando o mouse estiver em cima */
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2); /* sombra quando o mouse estiver em cima */
+    transform: translateY(-2px); /* efeito de elevação ao passar o mouse */
+  }
+  
+
+.image-container {
+    flex: 1;
+    height: 100%;
+    background-image: url('sua-imagem.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .image-container {
+        height: 50vh;
+    }
+}
