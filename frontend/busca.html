@@ -1,27 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html>
 <head>
+
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
     <script src="https://kit.fontawesome.com/f71e83bb45.js" crossorigin="anonymous"></script>
-    <title>Clinic Finder | Busca </title>
+    <link rel="stylesheet" href="/frontend/styleBusca.css">
+    <title>Busca de Estabelecimentos de Saúde</title>
 </head>
-<body>
 <header class="cabecalho ">
     <nav class="navbar navbar-expand-lg navbar-light  ">
-        <a class="navbar-brand" href="index.html"><img src="/frontend/img/logo.png" alt="logo das clinica" class="logo"></a>
+        <a class="navbar-brand" href="index.html"><img class="logo" src="./img/logo.png" alt="logo das clinica" class="logo"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Alterna navegação">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
           <ul class="navbar-nav">
             <li><a class="nav-item nav-link" href="busca.html">Busca</a></li>
-            <li><a class="nav-item nav-link" href="Perfil.html">Perfil</a></li>
             <li><a class="nav-item nav-link" href="Sobre.html">Sobre</a></li>
-            <li><a class="nav-item nav-link" href="index.html">Home</a></li>
+            <li><a class="nav-item nav-link" href="Suporte.html">Suporte</a></li>
+            <li><a class="nav-item nav-link" href="login.html">Login</a></li>
           </ul>
         </div>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNavAltMarkup">
@@ -33,126 +34,72 @@
         </div>
       </nav>
 </header>
+<body>
+	<h2>Busca por Estabelecimentos de Saúde</h2>
+	<form>
+		<label for="nome">Nome do Estabelecimento:</label>
+		<input type="text" id="nome" name="nome"><br>
 
+		<label for="cnpj">CNPJ:</label>
+		<input type="text" id="cnpj" name="cnpj"><br>
 
+		<label for="bairro">Bairro:</label>
+		<input type="text" id="bairro" name="bairro"><br>
 
-<h2 class="titulo-pagina"> Busca por Estabelecimentos de Saúde </h2>
+		<label for="cidade">Cidade:</label>
+		<input type="text" id="cidade" name="cidade"><br>
 
-<p>Nesta área, você pode realizar uma busca por prestadores de serviços em saúde devidamente inscritos juntos
-  aos conselhos regionais de medicina. Trata-se de ambulatórios, clínicas, consultórios, casas de repouso,
-  hospitais, entre outros tipos de estabelecimento. Basta preencher os campos abaixo. Quanto maior o número de
-  dados, mais fácil será encontrar o que procura.</p>
-<p>Para efetuar sua pesquisa, preencha os campos abaixo:</p>
-</div>
-</div>
-</div>
-</section>
+		<label for="estado">Estado:</label>
+		<select id="estado" name="estado">
+			<option value="">Selecione um estado</option>
+			<option value="AC">Acre</option>
+			<option value="AL">Alagoas</option>
+			<option value="AP">Amapá</option>
+			<option value="AM">Amazonas</option>
+			<option value="BA">Bahia</option>
+			<option value="CE">Ceará</option>
+			<option value="DF">Distrito Federal</option>
+			<option value="ES">Espírito Santo</option>
+			<option value="GO">Goiás</option>
+			<option value="MA">Maranhão</option>
+			<option value="MT">Mato Grosso</option>
+			<option value="MS">Mato Grosso do Sul</option>
+			<option value="MG">Minas Gerais</option>
+			<option value="PA">Pará</option>
+			<option value="PB">Paraíba</option>
+			<option value="PR">Paraná</option>
+			<option value="PE">Pernambuco</option>
+			<option value="PI">Piauí</option>
+			<option value="RJ">Rio de Janeiro</option>
+			<option value="RN">Rio Grande do Norte</option>
+			<option value="RS">Rio Grande do Sul</option>
+			<option value="RO">Rondônia</option>
+			<option value="RR">Roraima</option>
+			<option value="SC">Santa Catarina</option>
+			<option value="SP">São Paulo</option>
+			<option value="SE">Sergipe</option>
+			<option value="TO">Tocantins</option>
+		</select><br>
 
-<section class="page-content institucional-content">
-<div class="container">
-<div class="row">
-<div class="col">
+		<label for="crm">CRM:</label>
+		<input type="text" id="crm" name="crm"><br>
 
-<article class="form panel">
-  <div class="panel-header">
-    <div class="panel-title">
-      <h5>Encontre um Estabelecimentos de Saúde</h5>
-    </div>
-  </div>
-  <div class="panel-body">
-    <div class="row">
-      <div class="col">
-        <form method="POST" id="buscaForm" action="">
-          <div class="container-fluid">
-            <div class="row">
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>Nome do Estabelecimento:</label>
-                  <input type="text" name="nome" class="form-control" placeholder="Nome fantasia ou razão social do estabelecimento">
-                </div>
-              </div>
-              <div class="col-md-6">
-                <div class="form-group">
-                  <label>CNPJ</label>
-                  <input type="text" name="cnpj" class="form-control mask-cnpj" placeholder="Digite o CNPJ">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label>Estado</label>
-                  <select class="form-control" name="uf" id="uf">
-                    <option value="">Todos</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="Município">Cidade / Município</label>
-                  <select class="form-control" name="municipio" id="municipio">
-                    <option value="">Selecione</option>
-                  </select>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">CRM</label>
-                  <span class="basic-addon">52</span>
-                  <input type="text" name='crm' class="form-control controll-state" placeholder="Digite o CRM">
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="form-group">
-                  <label for="">Situação</label>
-                  <select class="form-control" name="situacao" id="situacao">
-                    <option value="">Situação</option>
-                    <option value="">Todos</option>
-                    <option value="Ativo">Ativo</option>
-                    <option value="Inativo">Inativo</option>
-                  </select>
-                </div>
-              </div>
-            </div>
+		<label for="situacao">Situação Cadastral:</label>
+		<select id="situacao" name="situacao">
+			<option value="">Selecione a situação cadastral</option>
+			<option value="ativo">Ativo</option>
+			<option value="inativo">Inativo</option>
+		</select><br>
 
-
-            <div class="row my-4">
-              <div class="col-md">
-                <!-- RECAPTCHA -->
-                <div class="c4wp_captcha_field" style="margin-bottom: 10px;"><div id="c4wp_captcha_field_1" class="c4wp_captcha_field_div"><input type="hidden" name="g-recaptcha-response" aria-label="do not use" aria-readonly="true" value=""/></div></div>                         <!-- END:RECAPTCHA -->
-              </div>
-              <div class="col-md-2 text-right">
-                <button class="w-100 btn-buscar" type="submit">BUSCAR</button>
-                <button class="w-100 btn-voltar" type="submit">VOLTAR</button>
-              </div>
-            </div>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-</article>
-
-<div class="busca-resultado">
-</div>
-
-<div class="loading" style="display: none">
-  <div class="d-flex justify-content-center">
-    <img src='' />
-  </div>
-</div>
-
-<div id="paginacao"></div>
-<div id="resultados"></div>
-
-</div>
-</div>
-</div>
-</section>
-
-<footer class="p-3 mt-5">
-    <p class="text-dark m-0 text-center">&copy; Clinic Finder 2022</p>
-    <ul class="navbar-nav text-center d-flex flex-row justify-content-center">
-      <li><a class="nav-item nav-link mr-2" href="#"><i class="fa-brands fa-facebook-square"></i></a></li>
-      <li><a class="nav-item nav-link mr-2" href="#"><i class="fa-brands fa-instagram"></i></a></li>
-      <li><a class="nav-item nav-link mr-2" href="#"><i class="fa-brands fa-twitter-square"></i></a></li>
-  </ul>
-  </footer>
+		<input type="submit" value="Buscar">
+		<input type="button" value="Voltar" onclick="history.back()">
+	</form>
+    <footer class="p-3 mt-5">
+        <p class="text-dark m-0 text-center">&copy; Clinic Finder 2022</p>
+        <ul class="navbar-nav text-center d-flex flex-row justify-content-center">
+          <li><a class="nav-item nav-link mr-2" href="#"><i class="fa-brands fa-facebook-square"></i></a></li>
+          <li><a class="nav-item nav-link mr-2" href="#"><i class="fa-brands fa-instagram"></i></a></li>
+          <li><a class="nav-item nav-link mr-2" href="#"><i class="fa-brands fa-twitter-square"></i></a></li>
+      </ul>
+</body>
+</html>

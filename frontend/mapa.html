@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/f71e83bb45.js" crossorigin="anonymous"></script>
+    <title>Clinic Finder | Busca </title>
+   
+      <style>
+        /* Estilos para o mapa */
+        #map {
+          height: 400px;
+          width: 100%;
+        }
+       
+      </style>
+    </head>
+    <body>
+      <h1>Localizador de Clínicas</h1>
+      
+      <!-- Mapa será exibido aqui -->
+      <div id="map"></div>
+    
+      <!-- Script do Google Maps API -->
+      <script src="https://maps.googleapis.com/maps/api/js?key=SUA_CHAVE_API&callback=initMap" async defer></script>
+    
+      <script>
+        // Função para inicializar o mapa
+        function initMap() {
+          // Verifica se o navegador suporta a geolocalização
+          if (navigator.geolocation) {
+            // Pede permissão para acessar a localização atual do usuário
+            navigator.geolocation.getCurrentPosition(function(position) {
+              // Cria um objeto de posição com as coordenadas atuais do usuário
+              const pos = {
+                lat: position.coords.latitude,
+                lng: position.coords.longitude
+              };
+    
+              // Cria um mapa centrado na posição do usuário
+              const map = new google.maps.Map(document.getElementById("map"), {
+                center: pos,
+                zoom: 12
+              });
+    
+              // Cria um marcador na posição do usuário
+              const marker = new google.maps.Marker({
+                position: pos,
+                map: map,
+                title: "Sua Localização Atual"
+              });
+    
+              // Faz uma requisição para obter as clínicas próximas à posição do usuário
+              const service = new google.maps.places.PlacesService(map);
+              service.nearbySearch({
+                location: pos,
+                radius: 10000,
+                type: "hospital"
+              }, callback);
+    
+              // Callback para manipular a resposta da API do Google Places
+              function callback(results, status) {
+                if (status === google.maps.places.PlacesServiceStatus.OK) {
+                  for (let i = 0; i < results.length; i++) {
+                    createMarker(results[i]);
+                  }
+                }
+              }
+    
+              // Cria um marcador para cada clínica encontrada
+              function createMarker(place) {
+                const marker = new google.maps.Marker({
+                  map: map,
+                  position: place.geometry.location
+                });
+              }
+            }, function() {
+              // Caso o usuário negue a permissão de localização
+              handleLocationError(true, infoWindow, map.getCenter());
+            });
+          } else {
+            // Caso o navegador não suporte a geolocalização
+            handleLocationError(false, infoWindow, map.getCenter());
+          }
+        }
+    
+        // Função para lidar com erros de localização
+        function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+          infoWindow.setPosition(pos);
+          infoWindow.setContent(browserHasGeolocation ?
+                                "Erro: O serviço de geolocalização falhou." :
+                                "Erro: Seu navegador não suporta geolocalização.");
+          infoWindow.open(map);
+        }
+      </script>
+    </body>
+    </html>
+    
